@@ -4,6 +4,10 @@ jQCloud is a jQuery plugin that builds neat and pure HTML + CSS word clouds and 
 
 You can see a demo here: http://www.lucaongaro.eu/demos/jqcloud/
 
+## 2025 Upgrade (by [danrod96](https://github.com/danrod96-new))
+
+I upgraded the project to support the latest stable jQuery release (3.7.1) and some other fixes to make it work with the [Drupal jQCloud Module](https://www.drupal.org/project/jqcloud) when installed in Drupal 10/11
+
 ## Installation
 
 Installing jQCloud is extremely simple:
@@ -30,7 +34,7 @@ Here is more detailed example:
   <head>
     <title>jQCloud Example</title>
     <link rel="stylesheet" type="text/css" href="jqcloud.css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="jqcloud-<%= version %>.js"></script>
     <script type="text/javascript">
       /*!
@@ -152,6 +156,8 @@ The newly-built distribution files will be put in the `jqcloud` subdirectory.
 If you make changes to the JavaScript source, to the README, to examples or to tests, make them to .erb files in the `src` subdirectory: changes will be reflected in the distribution files as soon as you build jQCloud. Also, if you send me a pull request, please don't change the version.txt file.
 
 ## Changelog
+
+1.0.5 Refactoring of the library to make it work with the latest jQuery library (v3.7.1), some changes in the ruby files and editis in the README.md file. By [danrod96](https://github.com/danrod96-new)
 
 1.0.4 Add option to remove overflowing words (thanks to [drewB](https://github.com/drewB))
 

@@ -1,16 +1,19 @@
 # jQCloud: beautiful word clouds with jQuery
-[![CDNJS version](https://img.shields.io/cdnjs/v/jqcloud.svg)](https://cdnjs.com/libraries/jqcloud)
 
 jQCloud is a jQuery plugin that builds neat and pure HTML + CSS word clouds and tag clouds that are actually shaped like a cloud (otherwise, why would we call them 'word clouds'?).
 
 You can see a demo here: http://www.lucaongaro.eu/demos/jqcloud/
+
+## 2025 Upgrade (by [danrod96](https://github.com/danrod96-new))
+
+I upgraded the project to support the latest stable jQuery release (3.7.1) and some other fixes to make it work with the [Drupal jQCloud Module](https://www.drupal.org/project/jqcloud) when installed in Drupal 10/11
 
 ## Installation
 
 Installing jQCloud is extremely simple:
 
 1. Make sure to import jQuery in your project.
-2. Download the jQCloud files. Place [jqcloud-1.0.4.js](https://raw.github.com/lucaong/jQCloud/master/jqcloud/jqcloud-1.0.4.js) (or the minified version [jqcloud-1.0.4.min.js](https://raw.github.com/lucaong/jQCloud/master/jqcloud/jqcloud-1.0.4.min.js)) and [jqcloud.css](https://raw.github.com/lucaong/jQCloud/master/jqcloud/jqcloud.css) somewhere in your project and import both of them in your HTML code.
+2. Download the jQCloud files. Place [jqcloud-1.0.5.js](https://raw.github.com/lucaong/jQCloud/master/jqcloud/jqcloud-1.0.5.js) (or the minified version [jqcloud-1.0.5.min.js](https://raw.github.com/lucaong/jQCloud/master/jqcloud/jqcloud-1.0.5.min.js)) and [jqcloud.css](https://raw.github.com/lucaong/jQCloud/master/jqcloud/jqcloud.css) somewhere in your project and import both of them in your HTML code.
 
 You can easily substitute jqcloud.css with a custom CSS stylesheet following the guidelines explained later.
 
@@ -31,8 +34,8 @@ Here is more detailed example:
   <head>
     <title>jQCloud Example</title>
     <link rel="stylesheet" type="text/css" href="jqcloud.css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-    <script type="text/javascript" src="jqcloud-1.0.4.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="jqcloud-1.0.5.js"></script>
     <script type="text/javascript">
       /*!
        * Create an array of word objects, each representing a word in the cloud
@@ -74,7 +77,7 @@ For each word object in your word array, you need to specify the following manda
 You can also specify the following options for each word:
 
   * **html** (object): an object specifying html attributes to be set on the word (e.g.: `{class: "customclass", title: "A title"}`). Any attribute can be set, except from "id", which is set by jQCloud.
-  * **link** (string or object): if specified, the word will be wrapped in a HTML link (`<a>` tag). If `link` is a string, it is expected to be the URL to which the link will point, and will be used as the link's `href` attribute. Alternatively, `link` can be an object specifying html attributes for the `<a>` tag, like `{href: "http://myurl.com", title: "A link"}`
+  * **link** (string or object): if specifyed, the word will be wrapped in a HTML link (`<a>` tag). If `link` is a string, it is expected to be the URL to which the link will point, and will be used as the link's `href` attribute. Alternatively, `link` can be an object specifying html attributes for the `<a>` tag, like `{href: "http://myurl.com", title: "A link"}`
   * **afterWordRender** (function): a function to be called after this word is rendered. Within the function, `this` refers to the jQuery object for the `<span>` containing the word.
   * **handlers** (object): an object specifying event handlers that will bind to the word (e.g.: `{click: function() { alert("it works!"); } }`)
 
@@ -104,7 +107,7 @@ All cloud-wide configurations are optional, and the full list of available optio
 The word cloud produced by jQCloud is made of pure HTML, so you can style it using CSS. When you call `$("#example").jQCloud(...)`, the containing element is given a CSS class of "jqcloud", allowing for easy CSS targeting. The included CSS file `jqcloud.css` is intended as an example and as a base on which to develop your own custom style, defining dimensions and appearance of words in the cloud. When writing your custom CSS, just follow these guidelines:
 
 * Always specify the dimensions of the container element (div.jqcloud in jqcloud.css).
-* The CSS attribute 'position' of the container element must be explicitly declared and different from 'static' (if it is 'static', jQCloud overwrites it to 'relative').
+* The CSS attribute 'position' of the container element must be explicitly declared and different from 'static' (if it is 'statis', jQCloud overwrites it to 'relative').
 * Specifying the style of the words (color, font, dimension, etc.) is super easy: words are wrapped in `<span>` tags with ten levels of importance corresponding to the following classes (in descending order of importance): w10, w9, w8, w7, w6, w5, w4, w3, w2, w1. 
 
 
@@ -154,6 +157,7 @@ If you make changes to the JavaScript source, to the README, to examples or to t
 
 ## Changelog
 
+1.0.5 Refactoring of the library to make it work with the latest jQuery library (v3.7.1), some changes in the ruby files and editis in the README.md file. By [danrod96](https://github.com/danrod96-new)
 
 1.0.4 Add option to remove overflowing words (thanks to [drewB](https://github.com/drewB))
 

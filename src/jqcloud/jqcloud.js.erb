@@ -192,7 +192,7 @@
         already_placed_words.push(word_span[0]);
 
         // Invoke callback if existing
-        if ($.isFunction(word.afterWordRender)) {
+        if (typeof (word.afterWordRender) === "function") {
           word.afterWordRender.call(word_span);
         }
       };
@@ -207,7 +207,7 @@
           drawOneWord(index, word_array[index]);
           setTimeout(function(){drawOneWordDelayed(index + 1);}, 10);
         } else {
-          if ($.isFunction(options.afterCloudRender)) {
+          if (typeof (options.afterCloudRender) === "function") {
             options.afterCloudRender.call($this);
           }
         }
@@ -219,7 +219,7 @@
       }
       else {
         $.each(word_array, drawOneWord);
-        if ($.isFunction(options.afterCloudRender)) {
+        if (typeof (options.afterCloudRender) === "function") {
           options.afterCloudRender.call($this);
         }
       }
